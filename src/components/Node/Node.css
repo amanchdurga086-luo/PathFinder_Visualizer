@@ -1,0 +1,32 @@
+.node {
+  width: 25px;
+  height: 25px;
+
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* Start */
+.node-start {
+  background: #00c853;
+}
+
+/* End */
+.node-end {
+  background: #ff1744;
+}
+
+/* Wall */
+.node-wall {
+  background: #212121;
+}
+
+/* Visited */
+.node-visited {
+  background: #40c4ff;
+}
+
+/* Path */
+.node-path {
+  background: #ffd600;
+}

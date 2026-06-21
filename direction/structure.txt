@@ -1,0 +1,47 @@
+src
+│
+├── components
+│   │
+│   ├── Grid
+│   │   ├── Grid.jsx
+│   │   ├── Grid.css
+│   │
+│   ├── Node
+│   │   ├── Node.jsx
+│   │   ├── Node.css
+│   │
+│   ├── Navbar
+│   │   ├── Navbar.jsx
+│   │   ├── Navbar.css
+│   │
+│   ├── Controls
+│   │   ├── Controls.jsx
+│   │   ├── Controls.css
+│   │
+│   ├── Legend
+│   │   ├── Legend.jsx
+│   │   ├── Legend.css
+│
+├── algorithms
+│   │
+│   ├── bfs.js
+│   ├── dfs.js
+│   ├── dijkstra.js
+│
+├── utils
+│   │
+│   ├── createGrid.js
+│   ├── getNeighbors.js
+│   ├── shortestPath.js
+│
+├── context
+│   │
+│   ├── ThemeContext.jsx
+│
+├── styles
+│   │
+│   ├── variables.css
+│
+├── App.jsx
+├── App.css
+├── main.jsx

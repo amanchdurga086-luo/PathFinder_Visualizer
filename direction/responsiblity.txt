@@ -1,0 +1,74 @@
+Component Responsibility
+1. App.jsx
+
+Main parent component.
+
+Stores:
+
+grid
+startNode
+endNode
+selectedAlgorithm
+animationSpeed
+darkMode
+
+Passes data to child components.
+
+2. Grid Component
+<Grid />
+
+Responsible for:
+
+Rendering 20x50 grid
+Mouse drag walls
+Start node
+End node
+
+3. Node Component
+<Node />
+
+Represents single cell.
+
+States:
+
+wall
+start
+end
+visited
+path
+
+4. Navbar Component
+
+Contains:
+
+Pathfinding Visualizer
+Dark Mode Toggle
+5. Controls Component
+
+Contains:
+
+Algorithm Dropdown
+
+BFS
+DFS
+Dijkstra
+
+Speed Slider
+
+Visualize Button
+
+Clear Board Button
+
+6. Legend Component
+
+Shows:
+
+🟢 Start Node
+
+🔴 End Node
+
+⚫ Wall
+
+🔵 Visited
+
+🟡 Shortest Path
