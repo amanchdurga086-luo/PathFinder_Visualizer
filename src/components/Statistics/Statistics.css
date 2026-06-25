@@ -1,0 +1,16 @@
+.statistics{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+
+    margin:15px 0;
+
+    font-size:16px;
+    font-weight:500;
+
+    flex-wrap:wrap;
+}
+
+.dark .statistics{
+    color:white;
+}

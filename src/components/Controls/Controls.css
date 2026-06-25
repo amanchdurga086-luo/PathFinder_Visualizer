@@ -13,3 +13,18 @@
   padding: 10px 15px;
   cursor: pointer;
 }
+
+.dark button,
+.dark select {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+    padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #444;
+}

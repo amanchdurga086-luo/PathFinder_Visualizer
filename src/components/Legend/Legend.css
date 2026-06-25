@@ -1,0 +1,48 @@
+.legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-box {
+  width: 18px;
+  height: 18px;
+
+  border-radius: 4px;
+
+  border: 1px solid #ccc;
+}
+
+.start {
+  background: #00c853;
+}
+
+.end {
+  background: #ff1744;
+}
+
+.wall {
+  background: #212121;
+}
+
+.visited {
+  background: #40c4ff;
+}
+
+.path {
+  background: #ffd600;
+}
+
+.dark .legend-item {
+  color: white;
+}

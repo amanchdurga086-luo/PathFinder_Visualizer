@@ -7,6 +7,10 @@ const Controls = ({
   speed,
   setSpeed,
   visualize,
+  darkMode,
+  setDarkMode,
+  generateRandomMaze,
+  generateRecursiveMaze,//------------
 }) => {
   return (
     <div>
@@ -31,8 +35,18 @@ const Controls = ({
         />
 
         <button onClick={visualize}>Visualize</button>
+
+        <button onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "☀ Light" : "🌙 Dark"}
+        </button>
+
+        <button onClick={generateRandomMaze}>Random Maze</button>
+
+      <button onClick={generateRecursiveMaze}>
+  Recursive Maze
+</button>//----------------------
       </div>
-      
+
       <button onClick={clearBoard}>Clear Board</button>
     </div>
   );

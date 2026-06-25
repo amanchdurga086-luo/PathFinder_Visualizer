@@ -9,19 +9,25 @@ export const dfs = (
   const visitedNodes = [];
 
   const visited = new Set();
+  const inStack = new Set();
 
   stack.push(startNode);
 
+  inStack.add(
+    `${startNode.row}-${startNode.col}`
+  );
+
   while (stack.length) {
     const current = stack.pop();
+    console.log(current);
 
-    const key =
+    const currentKey =
       `${current.row}-${current.col}`;
 
-    if (visited.has(key))
+    if (visited.has(currentKey))
       continue;
 
-    visited.add(key);
+    // visited.add(currentKey);
 
     visitedNodes.push(current);
 
@@ -33,16 +39,26 @@ export const dfs = (
       getNeighbors(current, grid);
 
     for (const neighbor of neighbors) {
-      const nKey =
+      const neighborKey =
         `${neighbor.row}-${neighbor.col}`;
 
-      if (!visited.has(nKey)) {
-        neighbor.previousNode =
-          current;
+      if (
+        !visited.has(neighborKey) &&
+        !inStack.has(neighborKey)
+      ) {
 
+        visited.add(currentKey);
+        
         stack.push(neighbor);
+        console.log(stack);
+
+        neighbor.previousNode =
+        current;
+        
+        inStack.add(neighborKey);
       }
     }
+    
   }
 
   return visitedNodes;

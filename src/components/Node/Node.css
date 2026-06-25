@@ -1,9 +1,20 @@
 .node {
   width: 25px;
   height: 25px;
-
+  
+  /* background: white; */
   border: 1px solid #ddd;
   box-sizing: border-box;
+}
+
+
+.dark .node:not(.node-start)
+:not(.node-end)
+:not(.node-wall)
+:not(.node-visited)
+:not(.node-path) {
+  border-color: #555;
+  background: #2f3136;
 }
 
 /* Start */
@@ -18,7 +29,7 @@
 
 /* Wall */
 .node-wall {
-  background: #212121;
+  background: #555;
 }
 
 /* Visited */

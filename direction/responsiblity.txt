@@ -72,3 +72,8 @@ Shows:
 🔵 Visited
 
 🟡 Shortest Path
+
+1. Random Maze
+2. Recursive Division   
+3. Spiral Maze
+4. Stair Maze

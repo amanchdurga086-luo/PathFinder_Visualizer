@@ -24,18 +24,19 @@ const Grid = ({
 
     if (node.isStart) {
       setMovingStart(true);
+      setMousePressed(true);
       return;
     }
 
     if (node.isEnd) {
       setMovingEnd(true);
+      setMousePressed(true);
       return;
     }
 
     const newGrid = grid.slice();
 
-    newGrid[row][col].isWall =
-      !newGrid[row][col].isWall;
+    newGrid[row][col].isWall = !newGrid[row][col].isWall;
 
     setGrid(newGrid);
 
@@ -58,10 +59,7 @@ const Grid = ({
 
     const newGrid = grid.slice();
 
-    if (
-      !newGrid[row][col].isStart &&
-      !newGrid[row][col].isEnd
-    ) {
+    if (!newGrid[row][col].isStart && !newGrid[row][col].isEnd) {
       newGrid[row][col].isWall = true;
     }
 
@@ -75,14 +73,28 @@ const Grid = ({
     setMovingEnd(false);
   };
 
-  
   const moveStartNode = (row, col) => {
+    if (grid[row][col].isWall) return;
+    if (grid[row][col].isEnd) return;
+
     const newGrid = grid.slice();
 
-    newGrid[startNode.row][startNode.col].isStart =
-      false;
+    // Remove every start node
+    for (const r of newGrid) {
+    for (const node of r) {
+      node.isStart = false;
+    }
+  }
+
+    newGrid[startNode.row][startNode.col].isStart = false;
+    newGrid[startNode.row][startNode.col].isVisited = false;
+    newGrid[startNode.row][startNode.col].isPath = false;
+    newGrid[startNode.row][startNode.col].previousNode = null;
 
     newGrid[row][col].isStart = true;
+    newGrid[row][col].isVisited = false;
+    newGrid[row][col].isPath = false;
+    newGrid[row][col].previousNode = null;
 
     setStartNode({ row, col });
 
@@ -90,12 +102,27 @@ const Grid = ({
   };
 
   const moveEndNode = (row, col) => {
+    if (grid[row][col].isWall) return;
+    if (grid[row][col].isStart) return;
+
     const newGrid = grid.slice();
 
-    newGrid[endNode.row][endNode.col].isEnd =
-      false;
+    // Remove every end node
+  for (const r of newGrid) {
+    for (const node of r) {
+      node.isEnd = false;
+    }
+  }
+
+    newGrid[endNode.row][endNode.col].isEnd = false;
+    newGrid[endNode.row][endNode.col].isVisited = false;
+    newGrid[endNode.row][endNode.col].isPath = false;
+    newGrid[endNode.row][endNode.col].previousNode = null;
 
     newGrid[row][col].isEnd = true;
+    newGrid[row][col].isVisited = false;
+    newGrid[row][col].isPath = false;
+    newGrid[row][col].previousNode = null;
 
     setEndNode({ row, col });
 
